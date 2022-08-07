@@ -1,0 +1,69 @@
+<div id="modal_overlay" class="hidden absolute inset-0 bg-black bg-opacity-30 h-screen w-full flex justify-center
+items-start md:items-center pt-10 md:pt-0 z-20">
+    <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative w-10/12 md:w-1/2 lg:h-1/2 md:h-3/4
+    bg-white rounded shadow-lg transition-opacity transition-transform duration-300">
+        <button onclick="openModal(false)" class="absolute -top-3 -right-3 bg-red-700 hover:bg-red-600 text-2xl
+        w-10 h-10 rounded-full focus:outline-none text-white">
+            &cross;
+        </button>
+
+        <div class="px-4 py-3 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-gray-600">
+                Menu - Accès rapide
+            </h2>
+        </div>
+
+        <div class="w-full p-3">
+            <div class="flex">
+              <div class="m-auto">
+                  <p class="text-lg text-cyan-500 font-bold">Menu</p>
+                <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-blue-300">Studio</button>
+                <button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-gray-300">Nos prix</button>
+                <button class="p-2 pl-5 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-yellow-300">Medias</button>
+                <p class="text-lg text-cyan-500 font-bold">Réservation rapide</p>
+                <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-blue-300">Session Standard 100$</button>
+                <button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-gray-300">Session Spécial 240$</button>
+                <button class="p-2 pl-5 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-yellow-300">Session VIP 805$</button>
+                <p class="text-lg text-cyan-500 font-bold mt-4">Sélectionner une prod</p>
+                <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-blue-500 text-blue-500 text-lg
+                rounded-lg hover:bg-blue-500 hover:text-gray-100 focus:border-4 focus:border-blue-300">Regarder Tout</button>
+                <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-gray-500 text-gray-500 text-lg
+                rounded-lg hover:bg-gray-500 hover:text-gray-100 focus:border-4 focus:border-gray-300">Trap</button>
+                <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-yellow-500 text-yellow-500 text-lg
+                rounded-lg hover:bg-yellow-500 hover:text-gray-100 focus:border-4 focus:border-yellow-300">Drill</button>
+                <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-red-500 text-red-500 text-lg rounded-lg
+                hover:bg-red-500 hover:text-gray-100 focus:border-4 focus:border-red-300">Afrobeat</button>
+                <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg
+                hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Afro Trap</button>
+                  <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg
+                hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">RNB - Pop</button>
+                  <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg
+                hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Old School</button>
+                  <p class="text-lg text-cyan-500 font-bold">Réservation rapide</p>
+                <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-blue-300">Facebook</button>
+                <button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-gray-300">Instagram</button>
+                <button class="p-2 pl-5 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4
+                border-yellow-300">Youtube</button>
+              </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 px-4 py-3 border-t border-gray-200 w-full flex justify-end items-center
+        gap-3">
+            <button class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                Offres et Promotions
+            </button>
+
+            <button onclick="openModal(false)" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded text-white
+            focus:outline-none">Fermer</button>
+        </div>
+    </div>
+</div>

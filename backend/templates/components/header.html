@@ -1,0 +1,44 @@
+<div class="heading">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/logos/logo1.jpg') }}" alt="logo">
+    </div>
+
+    <div class="contacts">
+        <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+        </div>
+
+        <div class="phones">
+            <a href="{{ front_pack['phone']['phone1']['link'] }}">
+                {{ front_pack['phone']['phone1']['name'] }}
+            </a>
+
+            <a href="{{ front_pack['phone']['phone2']['link'] }}">
+                {{ front_pack['phone']['phone2']['name'] }}
+            </a>
+        </div>
+    </div>
+
+    <div class="social-medias">
+        <a href="{{ front_pack['social_medias']['facebook']['link'] }}" target="_blank">
+            <i class="{{ front_pack['social_medias']['facebook']['icon'] }}"></i>
+            {{ front_pack['social_medias']['facebook']['name'] }}
+        </a>
+
+        <a href="{{ front_pack['social_medias']['instagram']['link'] }}" target="_blank">
+            <i class="{{ front_pack['social_medias']['instagram']['icon'] }}"></i>
+            {{ front_pack['social_medias']['instagram']['name'] }}
+        </a>
+
+        <a href="{{ front_pack['social_medias']['sssprods_instagram']['link'] }}" target="_blank">
+            <i class="{{ front_pack['social_medias']['sssprods_instagram']['icon'] }}"></i>
+            {{ front_pack['social_medias']['sssprods_instagram']['name'] }}
+        </a>
+    </div>
+
+    <div class="booking-button">
+        <a href="{{ url_for('domains.booking.main') }}" target="_blank">
+            <button>Book une session</button>
+        </a>
+    </div>
+</div>

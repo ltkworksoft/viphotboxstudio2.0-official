@@ -1,0 +1,21 @@
+<div class="w-full h-auto py-24 px-16 lg:flex items-center">
+    <div class="mr-16 lg:mb-0 mb-8">
+        <h1 class="text-5xl uppercase font-bold">VIP PHOTOS</h1>
+    </div>
+
+    <div class="overflow-x-auto flex items-center hover:scroll-auto" id="gallery">
+        {% for i in front_pack['settings'].generate_gallery_slides(0, 14, 'gallery', 'slide')['paths'] %}
+            <img src="{{ url_for('static', filename=i) }}" alt="slide" class="h-96 w-72 m-3 hover:-translate-y-6
+            hover:skew-y-2 ease-in duration-400 delay-300 shadow-md rounded">
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    const scrollContainer = document.getElementById("gallery");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    });
+</script>

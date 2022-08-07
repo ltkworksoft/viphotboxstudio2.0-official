@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/domains/studio/studio.css') }}" type="text/css">
+{% endblock %}
+
+{% block loader %}
+    {% include 'components/loader.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'components/menu.html' %}
+    {% include 'components/navbar.html' %}
+
+    <div class="flex justify-center items-center bg-blue-900">
+        <div class="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+            <div role="main" class="flex flex-col items-center justify-center">
+                <h1 class="text-4xl font-semibold leading-9 text-center text-gray-800 dark:text-gray-50">
+                    Nos services
+                </h1>
+                <p class="text-base leading-normal text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12
+                w-11/12">
+                    Si vous cherchez le professionnalisme, la meilleure qualité de production et
+                    un studio qui participe à votre succès, vous êtes à la bonne place!
+                </p>
+            </div>
+
+            <div class="lg:flex items-stretch md:mt-12 mt-8">
+                <div class="lg:w-1/2">
+                    <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
+                        <div class="sm:w-1/2 relative shadow-lg hover:shadow-2xl duration-200 delay-75">
+                            <div>
+                                <div class="absolute bottom-0 left-0 p-6">
+                                    <h2 class="text-2xl font-semibold 5 text-white">
+                                        Enregistrement audio
+                                    </h2>
+                                    <p class="text-base leading-4 text-white mt-2">
+                                        Haute qualité sonore
+                                    </p>
+                                </div>
+                            </div>
+                            <img src="{{ url_for('static', filename='img/studio/record-image.jpg') }}"
+                                 class="w-full" alt="record-image">
+                        </div>
+
+                        <div class="sm:w-1/2 sm:mt-0 mt-4 relative shadow-lg hover:shadow-2xl duration-200 delay-75">
+                            <div>
+                                <div class="absolute bottom-0 left-0 p-6">
+                                    <h2 class="text-2xl font-semibold 5 text-white">
+                                        Mixage & Mastering
+                                    </h2>
+                                    <p class="text-base leading-4 text-white mt-2">
+                                        Une équipe professionnelle
+                                    </p>
+                                </div>
+                            </div>
+                            <img src="{{ url_for('static', filename='img/studio/mixage-image.jpg') }}" class="w-full"
+                                 alt="wall design">
+                        </div>
+                    </div>
+
+                    <div class="relative shadow-lg hover:shadow-2xl duration-200 delay-75">
+                        <div>
+                            <div class="absolute bottom-0 left-0 md:p-10 p-6">
+                                <h2 class="text-3xl font-semibold 5 text-white">
+                                    Production de clip vidéo
+                                </h2>
+                                <p class="text-base leading-4 text-white mt-2">
+                                    @thedarkpointez
+                                </p>
+
+                                <a href="" class="focus:outline-none focus:underline flex items-center mt-4
+                                cursor-pointer text-white hover:text-gray-200 hover:underline">
+                                    <p class="pr-2 text-lg font-medium leading-none animate-pulse">
+                                        Regarder Nos Clips Vidéo
+                                    </p>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <img src="{{ url_for('static', filename='img/studio/video-image.jpg') }}" alt="video"
+                             class="w-full mt-8 md:mt-6 hidden sm:block">
+
+                        <img class="w-full mt-4 sm:hidden" src="{{ url_for('static',
+                        filename='img/studio/video-image.jpg') }}" alt="video" />
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
+                    <div class="relative shadow-lg hover:shadow-2xl duration-200 delay-75">
+                        <div>
+                            <div class="absolute bottom-0 left-0 md:p-10 p-6">
+                                <h2 class="text-4xl font-semibold 5 text-white">
+                                    Production Artistique
+                                </h2>
+                                <p class="text-base leading-4 text-white mt-2">
+                                    On accompagne ton talent
+                                </p>
+
+                                <a href="" class="focus:outline-none focus:underline flex items-center mt-4
+                                cursor-pointer text-white hover:text-gray-200 hover:underline">
+                                    <p class="pr-2 text-sm font-medium leading-none">
+                                        En Savoir Plus
+                                    </p>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/studio/production-image.jpg') }}"
+                             alt="production" class="w-full sm:block hidden">
+                        <img class="w-full sm:hidden" src="{{ url_for('static',
+                        filename='img/studio/production-image.jpg') }}" alt="production">
+                    </div>
+
+                    <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
+                        <div class="relative w-full shadow-lg hover:shadow-2xl duration-200 delay-75">
+                            <div>
+                                <div class="absolute bottom-0 left-0 p-6">
+                                    <h2 class="text-xl font-semibold 5 text-white">
+                                        Marketing Musical
+                                    </h2>
+                                    <p class="text-base leading-4 text-white mt-2">
+                                        Fais-toi écouter!
+                                    </p>
+                                    <a href="" class="focus:outline-none focus:underline flex items-center mt-4
+                                    cursor-pointer text-white hover:text-gray-200 hover:underline">
+                                        <p class="pr-2 text-sm font-medium leading-none">
+                                            En Savoir Plus
+                                        </p>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ url_for('static', filename='img/studio/marketing-image.jpg') }}"
+                                 class="w-full" alt="marketing" />
+                        </div>
+                        <div class="relative w-full sm:mt-0 mt-4 shadow-lg hover:shadow-2xl duration-200 delay-75">
+                            <div>
+                                <div class="absolute bottom-0 left-0 p-6">
+                                    <h2 class="text-xl font-semibold 5 text-white">
+                                        Beatmaking & Production Instrumentale
+                                    </h2>
+                                    <p class="text-base leading-4 text-white mt-2">
+                                        LET THEM KNOW
+                                    </p>
+
+                                    <a href="" target="_blank" class="focus:outline-none focus:underline flex
+                                    items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+                                        <p class="pr-2 text-sm font-medium leading-none">
+                                            Triple S Prods
+                                        </p>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <img src="{{ url_for('static', filename='img/studio/sssprods.jpg') }}" class="w-full"
+                                 alt="sssprods" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="text-indigo-200 body-font p-5 bg-black">
+        <Link to="coursedet">
+        <div class="mx-auto flex px-5  md:flex-row flex-col items-center jobcard">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16
+            md:mb-0 items-center">
+                <figure class="visible">
+                    <div class="">
+                        <div class="pt-10 px-2 sm:px-6">
+                            <span class="inline-block py-1 px-2 rounded-full bg-red-800 text-white  text-xs font-bold
+                            tracking-widest mb-2">
+                                VIP HOTBOX STUDIO
+                            </span>
+
+                            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">
+                                En Savoir Plus Sur Nous,
+                                <br class="hidden lg:inline-block" />Notre Équipe, Notre Studio et Label de Production
+                            </h1>
+
+                            <p class="text-indigo-200 text-base pb-6">
+                                VIP HOTBOX Studio offre l'enregistrement, le mixage et le mastering, bref! Tout ce qui
+                                concerne un son. </p>
+                            <p class="text-indigo-200 text-base pb-8">Que ça soit un single, mixtape, EP, Album.
+                                Notre Équipe est à votre disposition pour vous donner le meilleur choix "Qualité & Prix"
+                                qui vous convient.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center pb-12">
+                                    <div class="h-12 w-12">
+                                        <img src="{{ url_for('static', filename='img/studio/sx3mafia.jpg') }}" alt
+                                             class="h-full w-full object-cover overflow-hidden rounded-full" />
+                                    </div>
+
+                                    <p class="text-indigo-200 font-bold ml-3">
+                                        Triple S Prods
+                                        <br>
+                                        <span class="text-indigo-200 text-base font-light">
+                                            Music Producer
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:block hidden">
+
+                <img class="object-cover object-center rounded" alt="hero" src="{{ url_for('home.static',
+                filename='img/slides/slide5.jpg') }}" />
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+{% endblock %}

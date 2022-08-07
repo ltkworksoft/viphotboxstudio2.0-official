@@ -1,0 +1,31 @@
+.welcome-div {
+    display: flex;
+    align-items: center;
+    padding: 5% 10%;
+}
+
+.welcome-div .welcome-div-image img {
+    filter: drop-shadow(0 0 0.75rem #656565);
+}
+
+.welcome-div-details {
+    margin-left: 10%;
+}
+
+.welcome-div-details h1 {
+    font-size: 30px;
+    color: #001241;
+}
+
+.welcome-div-details p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.welcome-div-details a button {
+    margin-top: 30px;
+    padding: 15px 20px;
+    font-size: 22px;
+    border-radius: 10px;
+    border: 2px solid #001241;
+}

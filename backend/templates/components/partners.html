@@ -1,0 +1,25 @@
+<div class="py-16 bg-white">
+    <div class="container m-auto px-6 space-y-8 md:px-12 lg:px-56">
+        <div class="m-auto text-center lg:w-7/12">
+            <h2 class="text-2xl text-gray-700 font-bold md:text-4xl">
+                Nos partenaires.
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+            {% for i in front_pack['partners'].get_all_partners() %}
+                <div class="p-4 text-center">
+                    {% if i.website %}
+                        <a href={{ i.website }}>
+                            <img src="{{ url_for('static', filename='img/partners/' + i.img_path) }}" class="w-32"
+                                 alt="{{ i.img_alt }}">
+                        </a>
+                    {% else %}
+                        <img src="{{ url_for('static', filename='img/partners/' + i.img_path) }}" class="w-32"
+                                 alt="{{ i.img_alt }}">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

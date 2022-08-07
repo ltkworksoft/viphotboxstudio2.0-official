@@ -1,0 +1,64 @@
+<div class="w-full bg-black text-white">
+    <div class="xl:px-40 pb-12 lg:px-20 md:px-10 sm:px-5 px-10">
+        <div class="w-full pt-12 flex flex-col sm:flex-row space-y-2 justify-start">
+            <div class="w-full sm:w-2/5 pr-6 flex flex-col space-y-4">
+                <div class="p-2 lg:ml-6 mr-4 ml-4 inline-flex items-center">
+                    <img class="w-48 h-24 cursor-pointer" src="{{ url_for('static', filename='img/logos/logo2.jpg') }}"
+                         alt="dls fondation logo" onclick="topFunction()" id="myBtn">
+                </div>
+            </div>
+
+            <div class="w-full sm:w-1/5 flex flex-col space-y-4">
+                <a href="{{ url_for('home.about') }}" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    À propos
+                </a>
+                <a href="" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    Studio
+                </a>
+                <a href="" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    Nos Prix
+                </a>
+                <a href="" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    Beats Store
+                </a>
+            </div>
+
+            <div class="w-full sm:w-1/5 flex flex-col space-y-4">
+                <a href="" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    Nous Joindre
+                </a>
+                <a href="" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    Blog
+                </a>
+                <a href="" class="opacity-60 hover:text-red-600 hover:opacity-100">
+                    Accès rapide
+                </a>
+            </div>
+
+            <div class="w-full sm:w-1/5 pt-6 flex items-end mb-1">
+                <div class="flex flex-row space-x-4">
+                    <a href="{{ front_pack['social_medias']['facebook']['link'] }}" target="_blank">
+                        <i class="{{ front_pack['social_medias']['facebook']['icon'] }} hover:text-sky-600"></i>
+                    </a>
+                    <a href="{{ front_pack['social_medias']['instagram']['link'] }}" target="_blank">
+                        <i class="{{ front_pack['social_medias']['instagram']['icon'] }} hover:text-sky-600"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="opacity-90 pt-2">
+            <p>© {{ front_pack['current_year'] }} LTK WORK SOFT - VIP Hotbox Studio.</p>
+            <a href="{{ front_pack['address']['link'] }}">
+                {{ front_pack['address']['name'] }}
+            </a>
+            <br>
+            <a href="{{ front_pack['email']['link'] }}">
+                {{ front_pack['email']['name'] }}
+            </a>
+            <a href="{{ front_pack['phone']['link'] }}">
+                {{ front_pack['phone']['name'] }}
+            </a>
+        </div>
+    </div>
+</div>

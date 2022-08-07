@@ -1,0 +1,32 @@
+<div class="w-full overflow-hidden flex flex-nowrap text-center" id="slider">
+    {% for i in front_pack['offers'].get_all_offers() %}
+        <div class="bg-{{ i.bg_color }}-600 text-white space-y-4 flex-none w-full flex flex-col items-center
+        justify-center py-24 px-10">
+            <h2 class="text-4xl max-w-md">
+                {{ i.title }}
+            </h2>
+
+            <p class="max-w-md">
+                {{ i.description }}
+            </p>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.querySelector('#slider');
+        setTimeout(function moveSlide() {
+            const max = slider.scrollWidth - slider.clientWidth;
+            const left = slider.clientWidth;
+
+            if (max === slider.scrollLeft) {
+                slider.scrollTo({left: 0, behavior: 'smooth'})
+            } else {
+                slider.scrollBy({left, behavior: 'smooth'})
+            }
+
+            setTimeout(moveSlide, 7000)
+        }, 7000)
+    })
+</script>

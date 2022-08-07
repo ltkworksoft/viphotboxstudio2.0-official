@@ -1,0 +1,155 @@
+.heading {
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 10%;
+    display: flex;
+    align-items: center;
+}
+
+.heading .logo {
+    width: 10%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.heading .logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.75rem rgba(164, 0, 0, 0.73));
+    transition: ease-in-out 0.4s;
+}
+
+.heading .logo img:hover {
+    filter: drop-shadow(0 0 0.75rem rgba(0, 18, 65, 0.6));
+}
+
+.heading .contacts {
+    width: 30%;
+    margin: 0 5% 0 15%;
+    display: flex;
+    align-items: center;
+}
+
+.heading .contacts .contact-icon {
+    width: 5%;
+}
+
+.heading .contacts .contact-icon i {
+    font-size: 30px;
+    background-color: transparent;
+    border: 1px solid #001241;
+    color: black;
+    border-radius: 50%;
+    padding: 15px;
+    opacity: 0.9;
+    transition: ease-in-out 0.4s;
+    cursor: pointer;
+}
+
+.heading .contacts .contact-icon i:hover {
+    transform: scale(1.1);
+}
+
+.heading .contacts .phones {
+    margin-left: 60px;
+}
+
+.heading .contacts .phones a {
+    display: block;
+    font-size: 18px;
+    color: black;
+    opacity: 0.9;
+    transition: ease-in-out 0.4s;
+}
+
+.heading .contacts .phones a:hover {
+    color: #a40000;
+    opacity: 0.9;
+}
+
+.heading .social-medias {
+    width: 20%;
+    margin: 0 5%;
+    align-items: center;
+}
+
+.heading .social-medias a {
+    display: block;
+    margin: 0 5%;
+    color: black;
+    opacity: 0.9;
+    transition: ease-in-out 0.4s;
+}
+
+.heading .social-medias a:hover {
+    color: #a40000;
+    transform: scale(1.1);
+}
+
+.heading .social-medias a i {
+    color: #001241;
+}
+
+.heading .booking-button {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.heading .booking-button button {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #001241;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: ease-in-out 0.4s;
+}
+
+.heading .booking-button button:hover {
+    border-color: #a40000;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px){
+    .heading {
+        display: block;
+        text-align: center;
+    }
+
+    .heading .logo {
+        width: 40%;
+    }
+
+    .heading .contacts {
+        display: flex;
+        width: 100%;
+        margin: 10% auto;
+    }
+
+    .heading .social-medias {
+        display: flex;
+        width: 100%;
+        margin: 5% auto;
+    }
+
+    .heading .booking-button {
+        display: block;
+        margin: 5% auto;
+    }
+
+    .heading .booking-button button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .heading {
+        text-align: center;
+        padding: 20px 5%;
+    }
+}

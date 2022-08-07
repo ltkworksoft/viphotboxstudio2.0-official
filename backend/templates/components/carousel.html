@@ -1,0 +1,26 @@
+<div class="slideshow-container shadow-md w-full p-0">
+    {% for i in front_pack['settings'].generate_slides(0, 3, 'slides', 'slide',
+            ['VIP HOTBOX STUDIO',
+            'Excellente équipe!',
+            'Service Exceptionnel!'], ['domains.studio.main', 'home.about', 'domains.booking.main'],
+            ['Découvrir notre studio', 'À propos de nous', 'Réserver une session'])['paths'] %}
+        <div class="mySlides hidden m-0 p-0">
+            <div class="bg-cover text-white lg:py-64 py-48 w-full"
+                 style="background-image: url({{ url_for('static', filename=i[0]) }})">
+                <div class="myText w-full px-10 py-4">
+                    <div class="text-6xl font-bold">
+                        <span>{{ i[1] }}</span>
+                    </div>
+                    <br>
+                    <div>
+                    <a href="{{ url_for(i[2]) }}"
+                       class="p-2 my-5 mx-2 bg-red-800 hover:bg-white font-bold text-white hover:text-black rounded border-2
+                        border-transparent hover:border-white shadow-md transition duration-500 md:text-xl">
+                        {{ i[3] }}
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
