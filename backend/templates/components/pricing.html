@@ -1,8 +1,8 @@
-<section class="bg-black">
+<section class="bg-black" id="pricing">
     <div class="container px-6 py-8 mx-auto">
         <div class="sm:flex sm:items-center sm:justify-between">
             <div>
-                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">
+                <h2 class="text-5xl font-bold text-gray-800 dark:text-gray-100">
                     Nos prix
                 </h2>
 
@@ -12,223 +12,93 @@
             </div>
         </div>
 
-        <div class="grid gap-2 mt-16 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200
-            dark:hover:bg-gray-700">
-                <p class="text-lg font-medium text-gray-800 dark:text-gray-100">
-                    Standard
-                </p>
+        <div class="grid gap-2 mt-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            {% for i in front_pack['prices'].get_all_prices() %}
+                {% if i.solo_price == false %}
+                    <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-900
+                    cursor-pointer hover:text-white border-2 border-gray-500 hover:border-none">
+                        <p class="text-lg font-medium text-gray-200">
+                            {{ i.title }}
+                        </p>
 
-                <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">
-                    $100 <span class="text-base font-normal text-gray-600 dark:text-gray-400">CAD</span>
-                </h4>
+                        <h4 class="mt-2 text-4xl font-semibold text-white">
+                            {{ i.price }}
+                            {% if i.subscribe %}
+                                <span class="text-base font-normal text-gray-400"> / mois</span>
+                            {% else %}
+                                <span class="text-base font-normal text-gray-400"> / CAD</span>
+                            {% endif %}
+                        </h4>
 
-                <p class="mt-4 text-gray-500 dark:text-gray-300">
-                    Une session idéale pour un enregistrement unique.
-                </p>
+                        <p class="mt-4 text-gray-500 dark:text-gray-300">
+                            {{ i.description }}
+                        </p>
 
-                <div class="mt-8 space-y-8">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
-                             fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0
-                            00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                  clip-rule="evenodd">
-                            </path>
-                        </svg>
+                        <div class="mt-8 mb-20 space-y-4">
+                        {% for j in front_pack['settings'].cut_string_on_delimiter(i.content, ', ') %}
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">
-                            Session de 1h 20min
-                        </span>
-                    </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-circle-check text-green-700"></i>
+                                    <span class="mx-4 text-gray-700 dark:text-gray-300">
+                                        {{ j }}
+                                    </span>
+                                </div>
 
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
-                             fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0
-                            00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                  clip-rule="evenodd">
-                            </path>
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">
-                            Enregistrement audio
-                        </span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
-                             fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0
-                            00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                  clip-rule="evenodd"></path>
-                            </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">20% de rabais sur toutes nos instrus
-                            pendant 2 mois.</span>
-                    </div>
-
-                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize
-                    transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600
-                    focus:outline-none focus:bg-blue-600">
-                        Choisir ce plan
-                    </button>
-                </div>
-            </div>
-
-                <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg bg-gray-600">
-                    <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Offre Spécial</p>
-                    <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$240 <span class="text-base font-normal text-gray-600 dark:text-gray-400">CAD</span></h4>
-                    <p class="mt-4 text-gray-500 dark:text-gray-300">Le choix populaire et idéale pour faire un son complet.</p>
-
-                    <div class="mt-8 space-y-8">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">Session de 3 heures</span>
+                        {% endfor %}
                         </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">Enregistrement audio</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">Mixage & Mastering d'une chanson inclus</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">20% de rabais du toutes nos instrus pour une durée de 2 mois.</span>
+                        <div class="absolute bottom-5 w-full m-5">
+                            <a class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize
+                            transition-colors duration-200 transform bg-red-700 hover:bg-black rounded-md"
+                               href="https://appt.link/vip-hotbox-studio-booking/{{ i.name }}">
+                                Choisir ce plan
+                            </a>
                         </div>
                     </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
-                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                        Choisir ce plan
-                    </button>
-                </div>
+    <div class="bg-transparent">
+        <div class="container px-6 py-8 mx-auto">
+            <h1 class="mt-4 text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+                Prix unique
+            </h1>
 
-                <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg">
-                    <p class="text-lg font-medium text-gray-100">VIP Session</p>
-                    <h4 class="mt-2 text-4xl font-semibold text-gray-100">$805 <span class="text-base font-normal text-gray-400">CAD</span></h4>
-                    <p class="mt-4 text-gray-300">Une session parfaite pour produire une chanson complète.</p>
+            <div class="mt-6 space-y-8 xl:mt-12">
+                {% for x in front_pack['prices'].get_all_prices() %}
+                    {% if x.solo_price == true %}
+                        <div class="flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer
+                        rounded-xl dark:border-gray-700">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-circle-check"></i>
 
-                    <div class="mt-8 space-y-8">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
+                                <div class="flex flex-col items-start mx-5 space-y-1">
+                                    <h2 class="text-lg font-medium text-gray-700 sm:text-2xl dark:text-gray-200">
+                                        {{ x.title }}
+                                    </h2>
 
-                            <span class="mx-4 text-gray-300">session de 6 heures</span>
+                                    <div class="px-2 text-sm text-white sm:px-4 sm:py-1">
+                                        <p>
+                                            {{ x.description }}
+                                        </p>
+                                        <p>
+                                            {{ x.content }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="text-2xl font-semibold text-gray-500 sm:text-4xl dark:text-gray-300">
+                                {{ x.price }}$
+                                {% if x.name == 'beatmaking' %}
+                                    <span class="text-base font-medium">/heure</span>
+                                {% endif %}
+                            </h2>
                         </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-300">Production d'une chanson</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-300">Mixage & Mastering Inclus</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-300">Beatmaker disponible pour vous créer un beat sur mesure</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-300">Topliners</span>
-                        </div>
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-300">GhostWriters</span>
-                        </div>
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-
-                            <span class="mx-4 text-gray-300">50% de rabais pour 1 mois sur notre Beats Store</span>
-                        </div>
-                    </div>
-
-                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                        Choisir ce plan
-                    </button>
-                </div>
-
-                <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Abonnement</p>
-                    <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$310 <span class="text-base font-normal text-gray-600 dark:text-gray-400">/ mois</span></h4>
-                    <p class="mt-4 text-gray-500 dark:text-gray-300">Idéale pour vous produire fréquement.</p>
-
-                    <div class="mt-8 space-y-8">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">5 Sessions de 2h 20 min par mois (max. 5 Chansons)</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">Enregistrement Audio</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">Mixage D'une Chanson</span>
-                        </div>
-
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-
-                            <span class="mx-4 text-gray-700 dark:text-gray-300">Photos Artistiques</span>
-                        </div>
-                    </div>
-
-                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                        Choisir ce plan
-                    </button>
-                </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+</section>

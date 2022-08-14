@@ -1,1 +1,1 @@
-from backend.home.controllers import messages, partners, services
+from backend.home.controllers import messages, partners, services, prices
