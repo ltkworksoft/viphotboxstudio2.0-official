@@ -1,0 +1,14 @@
+<div class="h-screen flex bg-gray-900 items-center justify-center">
+    <div class="grid grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 gap-y-4 max-w-6xl">
+        {% for i in front_pack['videos'].get_all_videos() %}
+            <div>
+                <div class="relative">
+                    <iframe src="https://www.youtube.com/embed/{{ i.link }}"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

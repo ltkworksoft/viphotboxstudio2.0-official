@@ -1,10 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+    {% set production_team = front_pack['production_team'] %}
+    <div class="w-full h-full my-0 mx-auto p-0 bg-white justify-center">
+        {% include 'components/menu.html' %}
+        {% include 'components/navbar.html' %}
+
+        <div class="py-20" style="background: url({{ url_for('static', filename='img/about/header-image.jpg') }}) no-repeat center center fixed;
+            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-2 text-white">
+                    VIP HOTBOX STUDIO
+                </h2>
+                <h3 class="text-xl mb-8 text-gray-100">
+                    VIP HOTBOX Studio est un Label de production de musique situé dans la ville de Québec.
+                    Un studio qui vous permet d'enregistrer, de mixer et des masteriser vos sons pour avoir le meilleur
+                    résultat pour vos projets.
+                </h3>
+                <a href="" target="_blank" class="bg-white font-bold rounded-full py-4 px-8
+                shadow-lg uppercase tracking-wider hover:bg-gray-100">Réserver Une Session</a>
+            </div>
+        </div>
+
+        <div class="" style="background: url({{ url_for('home.static', filename='img/about/team.jpg') }}) no-repeat center center fixed;
+            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+            <dh-component>
+                <div class="flex justify-center mx-0 pt-16 bg-black w-full">
+                    <div>
+                        <p class="text-white text-lg text-center font-normal pb-3">
+                            ÉQUIPE DE PRODUCTION
+                        </p>
+
+                        <h1 class="xl:text-4xl text-3xl text-center text-white font-extrabold pb-6 sm:w-4/6 w-5/6
+                        mx-auto">
+                            Les personnes talentueuses dans les coulisses de l'équipe
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="w-full bg-black px-10 pt-10">
+                    <div class="container mx-auto">
+                        <div role="list" aria-label="Behind the scenes People " class="lg:flex md:flex sm:flex
+                        items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
+                            {% for member in production_team.keys() %}
+                            <div role="listitem" class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-1/4">
+                                <div class="rounded overflow-hidden shadow-md bg-white">
+                                    <div class="absolute -mt-20 w-full flex justify-center">
+                                        <div class="h-32 w-32">
+                                            <img src="{{ url_for('static', filename='img/' + production_team[member]['profile_img']) }}" role="img" class="rounded-full object-cover h-full w-full shadow-md" />
+                                        </div>
+                                    </div>
+                                    <div class="px-6 mt-16">
+                                        <h1 class="font-bold text-3xl text-center mb-1">{{ production_team[member]['subname'] }}</h1>
+                                        <p class="text-gray-800 text-sm text-center">{{ production_team[member]['role'] }}</p>
+                                        <p class="text-center text-gray-600 text-base pt-3 font-normal">{{ production_team[member]['description'] }}</p>
+                                        <div class="w-full flex justify-center pt-5 pb-5">
+                                            {% if production_team[member]['github'] %}
+                                            <a href="{{ production_team[member]['github'] }}" class="mx-5">
+                                                <div aria-label="Github" role="img">
+                                                    <i class="fab fa-github"></i>
+                                                </div>
+                                            </a>
+                                            {% endif %}
+                                            <a href="mailto:{{ production_team[member]['email'] }}" class="mx-5">
+                                                <div aria-label="Email" role="img">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </a>
+                                            <a href="{{ production_team[member]['instagram'] }}" class="mx-5">
+                                                <div aria-label="Instagram" role="img">
+                                                    <i class="fab fa-instagram"></i>
+                                                </div>
+                                            </a>
+                                        <a href="tel:{{ production_team[member]['phone'] }}" class="mx-5">
+                                                <div aria-label="Phone" role="img">
+                                                    <i class="fas fa-phone"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </dh-component>
+            <!-- Code block ends -->
+            <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
+        </div>
+
+
+        <section class="bg-red-700">
+            <div class="container mx-auto px-6 text-center py-20">
+                <h2 class="mb-6 text-4xl font-bold text-center text-white">
+                    Rejoins-toi à notre Label
+                </h2>
+                <h3 class="my-4 text-2xl text-white">
+                    Êtes-vous intéressé par le production artistique?
+                </h3>
+                <a href="https://appt.link/vip-hotbox-studio-booking/production-meeting"
+                   target="_blank">
+                    <button class="bg-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider">
+                        S'inscrire pour un rendez-vous
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        {% include 'components/footer.html' %}
+    </div>
+{% endblock %}

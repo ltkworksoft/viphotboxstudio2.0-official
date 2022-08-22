@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/music_player.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}" type="text/css">
+{% endblock %}
+
 {% block loader %}
     {% include 'components/loader.html' %}
 {% endblock %}
 
 {% block content %}
-    <div class="bg-black lg:h-screen h-auto px-10 py-32">
+    <div class="bg-black lg:h-screen h-auto lg:px-10 px-5 py-32">
         <h1 class="text-gray-200 text-5xl">
             VIP Hotbox Studio
         </h1>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mx-10 my-24">
-            <a href="#" class="group">
-                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-4 gap-2 lg:mx-10 mx-2 my-24">
+            <a href="#services" class="group">
+                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-56 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/services.jpg') }}" alt=""/>
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> Services </p>
             </a>
 
-            <a href="#" class="group">
+            <!--
+            <a href="#music_streaming" class="group">
                 <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/music.jpg') }}" alt=""/>
                 <br>
@@ -31,37 +37,38 @@
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> Vidéos Clip </p>
             </a>
+            -->
 
-            <a href="#" class="group">
-                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
+            <a href="#gallery" class="group">
+                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-56 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/photos.jpg') }}" alt=""/>
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> VIP Photos </p>
             </a>
 
             <a href="#" class="group">
-                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
+                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-56 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/events.jpg') }}" alt=""/>
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> Évènements </p>
             </a>
 
             <a href="#" class="group">
-                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
+                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-56 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/offers.jpg') }}" alt=""/>
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> Beats </p>
             </a>
 
             <a href="#" class="group">
-                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
+                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-56 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/session.jpg') }}" alt=""/>
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> Réserver une session </p>
             </a>
 
             <a href="#" class="group">
-                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-40 w-full
+                <img class="rounded border-2 border-transparent group-hover:border-2 group-hover:border-gray-300 h-56 w-full
                 hover:scale-105" src="{{ url_for('static', filename='img/studio/career.jpg') }}" alt=""/>
                 <br>
                 <p class="text-gray-500 group-hover:text-gray-300 text-center"> Carrière </p>
@@ -69,13 +76,17 @@
         </div>
 
         <div class="px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-8 gap-4 mt-20 ">
-        <a class="border-2 border-gray-600 text-gray-600 px-4 py-1 hover:border-gray-400 hover:text-gray-400 m-5">
+        <a class="border-2 border-gray-600 text-gray-600 px-4 py-1 hover:border-gray-400 hover:text-gray-400 m-5
+        text-center" href="{{ url_for('home.index') }}">
             Retour à l'accueil
         </a>
-        <a class="border-2 border-gray-600 text-gray-600 px-4 py-1 hover:border-gray-400 hover:text-gray-400 m-5">
+        <a class="border-2 border-gray-600 text-gray-600 px-4 py-1 hover:border-gray-400 hover:text-gray-400 m-5
+        text-center">
             Devenir membre?
         </a>
         </div>
 </div>
+    {% include 'components/services.html' %}
+    {% include 'components/gallery.html' %}
     {% include 'components/footer.html' %}
 {% endblock %}

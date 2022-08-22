@@ -1,10 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+    {% include 'components/navbar.html' %}
+    {% include 'components/menu.html' %}
+
+    <div class="py-4 bg-black text-white">
+        <div class="container mx-auto flex flex-col md:flex-row my-12 md:my-36">
+            <div class="flex flex-col w-full lg:w-2/5 p-8">
+                <p class="text-3xl md:text-5xl text-white my-4 leading-relaxed md:leading-snug">
+                    Contacter Notre Équipe
+                </p>
+                <p class="font-sans text-sm md:text-lg my-2 md:my-4 px-8 py-2 rounded">
+                    <a href="{{ front_pack['address'].link }}">
+                        <i class="{{ front_pack['address'].icon }}"></i> {{ front_pack['address'].name }}
+                    </a>
+                </p>
+
+                <p class="font-sans text-sm md:text-lg my-2 md:my-4 px-8 py-2 rounded">
+                    {% for i in front_pack['phone'].keys() %}
+                        <i class="{{ front_pack['phone'][i].icon }}"></i> <a href="{{ front_pack['phone'][i].link }}">
+                        {{ front_pack['phone'][i].name }}
+                    </a> <br>
+                    {% endfor %}
+                </p>
+
+                <p class="font-sans text-sm md:text-lg my-2 md:my-4 px-8 py-2 rounded">
+                    {% for i in front_pack['email'].keys() %}
+                        <i class="{{ front_pack['email'][i].icon }}"></i>
+                        <a href="{{ front_pack['email'][i].link }}">
+                            {{ front_pack['email'][i].name }}
+                        </a> <br>
+                    {% endfor %}
+                </p>
+                <br><br>
+
+                <a class="font-bold text-lg my-2 md:my-4 px-8 py-2 rounded bg-red-700 w-64 ml-8 hover:scale-105
+                duration-300 delay-300 hover:bg-red-800"
+                   href="#send_message">
+                    Envoyer un message
+                </a>
+
+                <p class="font-sans text-sm md:text-lg my-2 md:my-4 px-8 py-2 rounded">
+                    Heures D'ouverture <br>{{ front_pack['open_hours'].first_day }} -
+                    {{ front_pack['open_hours'].last_day }} <br>{{ front_pack['open_hours'].open_hour }} -
+                    {{ front_pack['open_hours'].close_hour }}
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:w-3/5 justify-center w-full lg:-mt-12">
+                <div class="container">
+                    <div class="relative flex flex-col min-w-0 break-words w-full">
+                        <div class="flex-auto p-5 lg:p-10">
+                            <div class="mapouter">
+                                <div class="gmap_canvas">
+                                    <iframe width="1080" height="547" id="gmap_canvas"
+                                            src="{{ front_pack['address'].frame }}"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'components/send_message.html' %}
+    {% include 'components/footer.html' %}
+{% endblock %}
