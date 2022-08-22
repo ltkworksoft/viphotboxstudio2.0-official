@@ -1,10 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <section class="mx-auto max-w-6xl py-12">
+        <div class="flex flex-col">
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center"></div>
+                <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center"></div>
+                <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center">
+                    <div slot="middle-left" class="max-w-2xl">
+                        <div class="flex flex-row">
+                            <div class="w-2/3 bg-orange-600 p-5 text-teal-100 flex justify-center items-center h-48
+                            text-3xl font-black uppercase">
+                                Nos plans de sessions de studios.
+                            </div>
+                        <div class="w-1/3 bg-teal-600 text-orange-100 p-5 flex justify-center items-center">
+                            Veuillez choisir une session qui vous convient pour votre projet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center"></div>
+            <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center">
+                <div slot="middle-right" class="max-w-xs">
+                    <div class="flex flex-col justify-center h-48 p-3">
+                        <div class="text-xl font-black text-teal-700">Payer en ligne ou sur place.</div>
+                        <div class="text-sm my-3">Vous pouvez payer votre session en ligne ou réserver la session et
+                        payer sur place au moment de votre session.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center items-center">
+            <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center mr-0 md:mr-2">
+                <div slot="bottom-left" class="max-w-xs">
+                    <div class="p-5 shadow-md m-2 mt-4">
+                        <img class="object-scale-down h-30" src="{{ url_for('static', filename='img/gallery/slide6.jpg') }}">
+                        <div class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2">1h 20min</div>
+                        <div class="text-xl font-bold mb-2">Session Standard</div>
+                        <div class="">
+                            <ul>
+                                <li>- Session de 1h20min</li>
+                                <li>- Enregistrement audio</li>
+                                <li class="">- 20% de rabais sur toutes nos instrus</li>
+                            </ul>
+                        </div>
+                        <div class="">
+                            <a href="https://appt.link/vip-hotbox-studio-booking/session1h20">Réserver et payer sur place</a>
+                            <a href="https://appt.link/vip-hotbox-studio-booking/session1h20online-clone-ebk7A60wXd">Réserver et payer en ligne</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center mx-0 md:mx-4">
+                <div slot="bottom-center" class="max-w-xs">
+                    <div class="p-5 shadow-md m-2 mt-4"><img class="object-scale-down h-30"
+                                                             src="{{ url_for('static', filename='img/gallery/slide1.jpg') }}">
+                        <div class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2">3h</div>
+                        <div class="text-xl font-bold mb-2">Offre Spécial</div>
+                        <div class="">
+                            <ul>
+                                <li>- Session de 3 heures</li>
+                                <li>- Enregistrement audio</li>
+                                <li>- Mixage & Mastering d'une chanson inclus</li>
+                                <li>- 20% de rabais sur toutes nos instrus pour une durée de 2 mois</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="transition-all ease-in-out duration-1000 flex flex-col justify-center ml-0 md:ml-2">
+                <div slot="bottom-right" class="max-w-xs">
+                    <div class="p-5 shadow-md m-2 mt-4"><img class="object-scale-down h-30" src="{{ url_for('static', filename='img/gallery/slide12.jpg') }}">
+                        <div class="text-xs font-bold uppercase text-teal-700 mt-1 mb-2">6h</div>
+                        <div class="text-xl font-bold mb-2">VIP Session</div>
+                        <div>
+                            <ul>
+                                <li>Session de 6 heures</li>
+                                <li>Production d'une chanson</li>
+                                <li>Mixage & Mastering inclus</li>
+                                <li>Beatmaker disponible pour vous créer un beat sur mesure</li>
+                                <li>Topliners & GhostWriters</li>
+                                <li>50$ de rabais pour 1 mois chez Triple S Prods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
