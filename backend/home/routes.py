@@ -1,6 +1,8 @@
 from flask import render_template
 from backend.home import home
 from backend.front_pack import front_pack
+from backend.home.controllers.messages import MessagesControllers
+from backend.home.forms import SendMessageForm
 
 
 @home.route('/')
@@ -22,4 +24,9 @@ def contacts():
 
 @home.route('/send_message', methods=["POST"])
 def send_message():
-    return "to complete"
+    form = SendMessageForm()
+    name = form.name.data
+    email = form.email.data
+    category = form.category.data
+    message = form.message.data
+    return MessagesControllers.send_message(name, email, category, message)

@@ -6,6 +6,7 @@ from backend.home.controllers.partners import PartnersControllers
 from backend.controllers.controllers import OffersControllers
 from backend.home.controllers.prices import PricesControllers
 from backend.controllers.controllers_videos import VideosControllers
+from backend.home.forms import SendMessageForm
 from backend.settings import settings
 
 
@@ -24,5 +25,6 @@ def front_pack():
         'offers': OffersControllers(),
         'prices': PricesControllers(),
         'production_team': production_team,
-        'videos': VideosControllers
+        'videos': VideosControllers,
+        'message_form': SendMessageForm()
     }

@@ -34,12 +34,13 @@
                 </p>
                 <br><br>
 
+                <!--
                 <a class="font-bold text-lg my-2 md:my-4 px-8 py-2 rounded bg-red-700 w-64 ml-8 hover:scale-105
                 duration-300 delay-300 hover:bg-red-800"
                    href="#send_message">
                     Envoyer un message
                 </a>
-
+                -->
                 <p class="font-sans text-sm md:text-lg my-2 md:my-4 px-8 py-2 rounded">
                     Heures D'ouverture <br>{{ front_pack['open_hours'].first_day }} -
                     {{ front_pack['open_hours'].last_day }} <br>{{ front_pack['open_hours'].open_hour }} -
@@ -64,6 +65,5 @@
         </div>
     </div>
 
-    {% include 'components/send_message.html' %}
     {% include 'components/footer.html' %}
 {% endblock %}
