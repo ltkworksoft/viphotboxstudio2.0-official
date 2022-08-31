@@ -29,7 +29,7 @@ class Prices(db.Model):
 
 class PricesSchema(marsh.Schema):
     class Meta:
-        fields = ('name', 'title', 'price', 'description', 'content', 'subscribe', 'discount', 'discount_code',
+        fields = ('id', 'name', 'title', 'price', 'description', 'content', 'subscribe', 'discount', 'discount_code',
                   'discount_amount', 'solo_price', 'beats_discount', 'beats_discount_code', 'beats_discount_amount')
 
 

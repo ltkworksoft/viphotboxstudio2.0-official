@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-blueGray-50 mb-10">
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+        <div class="absolute top-0 w-full h-full bg-center bg-cover"
+             style="background-image: url('{{ url_for('static', filename='img/slides/slide1.jpg') }}');">
+            <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+        </div>
+
+        <div class="container relative mx-auto">
+            <div class="items-center flex flex-wrap">
+                <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                    <div class="pr-12">
+                        <h1 class="text-white font-semibold text-5xl">
+                            Votre session a été réservé avec succès!
+                        </h1>
+
+                        <p class="mt-4 text-lg text-white">
+                            Vérifiez vos courriels pour plus de détails sur votre réservation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pb-10 bg-blueGray-200">
+        <h1 class="text-5xl text-center mt-5">Magasiner des prods pour votre session.</h1>
+        <div class="w-screen lg:p-10">
+            <iframe src="https://player.beatstars.com/?storeId=128327" class="w-full" style="height: 100vh;"> -- none -- </iframe>
+        </div>
+
+
+           <footer class="relative  pt-8 pb-6 mt-1">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+        <div class="text-sm text-blueGray-500 font-semibold py-1">
+          <a href="{{ url_for('home.index') }}" class="text-white hover:text-gray-800 bg-red-700 p-3" target="_blank">
+              Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+      </section>
+      </section>
+{% endblock %}

@@ -1,68 +1,137 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <style>
+        .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 10px;
+          width: 100%;
+          text-align: left;
+          border: none;
+          outline: none;
+          transition: 0.4s;
+        }
 
-    <div class="flex items-center justify-center min-h-screen bg-white py-48">
-        <div class="flex flex-col">
-            <div class="flex flex-col mt-8">
-                <div class="container max-w-7xl px-4">
-                    <div class="flex flex-wrap justify-center text-center mb-24">
-                        <div class="w-full lg:w-6/12 px-4">
-                            <h1 class="text-gray-900 text-4xl font-bold mb-8">
-                                Réserver une session
-                            </h1>
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active, .accordion:hover {
+          background-color: #ccc;
+        }
 
-                            <p class="text-gray-700 text-lg font-light">
-                                Réserver une session studio en ligne rapidement avec la possibilité de faire
-                                le paiement en ligne.
-                            </p>
+        .panel {
+          padding: 0 18px;
+          background-color: white;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+
+        .accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+    </style>
+
+    {% include 'components/navbar.html' %}
+
+    <div class="p-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {% for i in front_pack['prices'].get_all_prices() %}
+            {% if not i.solo_price %}
+            <div class="w-full flex items-stretch">
+                <div class="shadow p-4 rounded-lg bg-white">
+                    <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
+                        <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
+                            <img src="{{ url_for('static', filename='img/booking/card' + i.id|string + '.jpg') }}" alt="">
                         </div>
-                    </div>
-                    <div class="flex flex-wrap">
-                    {% for i in front_pack['prices'].get_all_prices() %}
-                        {% if i.solo_price == false %}
 
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <div class="text-center mt-6">
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        {{ i.title }}
-                                    </h1>
-
-                                    <div class="text-gray-700 font-light mb-2">
-                                        <ul>
-                                            {% for j in front_pack['settings'].cut_string_on_delimiter(i.content, ', ') %}
-                                                <li>{{ j }}</li>
-                                            {% endfor %}
-                                        </ul>
-                                    </div>
-
-                                    <div class="hover:opacity-1
-                                    transition-opacity duration-300">
-                                        <p class="block rounded-full hover:bg-indigo-50">
-                                            CAD ${{ i.price }}
-                                        </p>
-
-                                        <a href="https://appt.link/vip-hotbox-studio-booking/{{ i.name }}"
-                                           class="block rounded-full hover:bg-blue-50 p-2 bg-red-700 my-3">
-                                            Réserver et payer sur place
-                                        </a>
-
-                                        <a href="https://appt.link/vip-hotbox-studio-booking/{{ i.name }}online"
-                                           class="block rounded-full hover:bg-orange-50 p-2 bg-black text-white my-3">
-                                            Réserver et payer en ligne
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        {% if i.discount %}
+                            <span class="absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 rounded-lg z-10 bg-red-500
+                            text-sm font-medium text-white select-none">
+                                {{ i.discount_amount }}% de rabais
+                            </span>
                         {% endif %}
-                        {% endfor %}
+                    </div>
 
-                </div>
+                    <div class="mt-4">
+                        <h2 class="font-medium text-base md:text-lg text-gray-800 line-clamp-1">
+                            {{ i.title }}
+                        </h2>
+
+                        <p class="mt-2 text-sm text-gray-800 line-clamp-1">
+                            {{ i.description }}
+                        </p>
+                    </div>
+
+                    <button class="accordion my-3">contenu et détails de la session</button>
+
+                    <div class="panel">
+                        <ul>
+                            {% for j in front_pack['settings'].cut_string_on_delimiter(i.content, ', ') %}
+                                <li>- {{ j }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="font-semibold text-primary whitespace-nowrap leading-tight rounded-xl
+                        text-right m-3">
+                            <span class="text-sm uppercase">
+                                CAD$
+                            </span>
+
+                            <span class="text-lg">{{ i.price }}</span>
+                            {% if i.subscribe %}/mois{% endif %}
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 mt-3 gap-4">
+                        {% if i.subscribe %}
+                            <div>
+                            <a href="{{ url_for('home.contacts') }}" class="p-2 bg-red-700 hover:bg-red-800 text-white rounded">Nous contacter pour s'abonner</a>
+                        </div>
+                            {% else %}
+                        <div>
+                            <a href="https://appt.link/vip-hotbox-studio-booking/{{ i.name }}online" class="p-2 bg-red-700 hover:bg-red-800 text-white rounded">Réserver et payer en ligne</a>
+                        </div>
+
+                        <div>
+                            <a href="https://appt.link/vip-hotbox-studio-booking/{{ i.name }}" class="p-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Réserver et payer sur place</a>
+                        </div>
+                        {% endif %}
+
+                        </div>
+                    </div>
             </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
-</div>
+    </div>
+
+
+    {% include 'components/footer.html' %}
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+    </script>
 {% endblock %}
