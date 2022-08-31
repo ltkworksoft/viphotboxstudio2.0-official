@@ -30,3 +30,8 @@ def send_message():
     category = form.category.data
     message = form.message.data
     return MessagesControllers.send_message(name, email, category, message)
+
+
+@home.route('/doc')
+def doc():
+    return render_template('doc.html', front_pack=front_pack())

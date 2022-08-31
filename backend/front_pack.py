@@ -1,6 +1,6 @@
 from datetime import datetime as dt
 from backend.data import vip_address, vip_emails, vip_phones, social_medias, send_message_categories, open_hours, \
-    production_team
+    production_team, liste, discount_amount, charge, invoice
 from backend.home.controllers.services import ServicesControllers
 from backend.home.controllers.partners import PartnersControllers
 from backend.controllers.controllers import OffersControllers
@@ -26,5 +26,9 @@ def front_pack():
         'prices': PricesControllers(),
         'production_team': production_team,
         'videos': VideosControllers,
-        'message_form': SendMessageForm()
+        'message_form': SendMessageForm(),
+        'liste': liste,
+        'discount_amount': discount_amount,
+        'charge': charge,
+        'invoice': invoice(liste, discount_amount, charge)
     }

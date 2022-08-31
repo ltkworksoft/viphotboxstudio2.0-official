@@ -91,3 +91,16 @@ production_team = {
         'profile_img': 'about/foubou.jpg'
     },
 }
+
+
+liste = [(310.00, 1), (300.00, 1)]
+discount_amount = 15
+charge = 1
+
+
+def invoice(inputs, discount, service_charge):
+    total = 0
+    for i in inputs:
+        total += i[0]*i[1]
+    sub_total = total - (total * discount / 100)
+    return round(sub_total - (service_charge * sub_total / 100), 2)
