@@ -22,8 +22,13 @@ def contacts():
     return render_template('home/contacts.html', title="Contacts", front_pack=front_pack())
 
 
-@home.route('/send_message', methods=["POST"])
+@home.route('/send_message')
 def send_message():
+    return render_template('home/send_message.html', title="Envoyer un message", front_pack=front_pack())
+
+
+@home.route('/send_message', methods=["POST"])
+def send_message_post():
     form = SendMessageForm()
     name = form.name.data
     email = form.email.data

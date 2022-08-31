@@ -1,4 +1,4 @@
-from flask import url_for, request
+from flask import url_for, request, flash
 from sqlalchemy import desc, asc
 from werkzeug.utils import redirect
 from backend.email import send_mail
@@ -18,4 +18,5 @@ class MessagesControllers:
         db.session.add(new_message)
         db.session.commit()
         send_mail(email, "Ne pas répondre", "email/email_message", message=new_message)
+        flash("Votre a été reçu! Merci d'avoir contacter VIP Hotbox Studio")
         return redirect(request.referrer)

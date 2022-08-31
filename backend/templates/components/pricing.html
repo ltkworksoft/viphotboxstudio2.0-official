@@ -2,11 +2,11 @@
     <div class="container px-6 py-8 mx-auto">
         <div class="sm:flex sm:items-center sm:justify-between">
             <div>
-                <h2 class="text-5xl font-bold text-gray-800 dark:text-gray-100">
+                <h2 class="text-5xl font-bold text-gray-100">
                     Nos prix
                 </h2>
 
-                <p class="mt-4 text-gray-500 dark:text-gray-400">
+                <p class="mt-4 text-gray-400">
                     Meilleur service pour le meilleur prix.
                 </p>
             </div>
@@ -30,7 +30,7 @@
                             {% endif %}
                         </h4>
 
-                        <p class="mt-4 text-gray-500 dark:text-gray-300">
+                        <p class="mt-4 text-gray-300">
                             {{ i.description }}
                         </p>
 
@@ -39,7 +39,7 @@
 
                                 <div class="flex items-center">
                                     <i class="fa-solid fa-circle-check text-green-700"></i>
-                                    <span class="mx-4 text-gray-700 dark:text-gray-300">
+                                    <span class="mx-4 text-gray-300">
                                         {{ j }}
                                     </span>
                                 </div>
@@ -69,7 +69,7 @@
 
     <div class="bg-transparent">
         <div class="container px-6 py-8 mx-auto">
-            <h1 class="mt-4 text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+            <h1 class="mt-4 text-3xl font-semibold text-center capitalize lg:text-4xl text-white">
                 Prix unique
             </h1>
 
@@ -77,12 +77,12 @@
                 {% for x in front_pack['prices'].get_all_prices() %}
                     {% if x.solo_price == true %}
                         <div class="flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer
-                        rounded-xl dark:border-gray-700">
+                        rounded-xl border-gray-700">
                             <div class="flex items-center">
                                 <i class="fa-solid fa-circle-check"></i>
 
                                 <div class="flex flex-col items-start mx-5 space-y-1">
-                                    <h2 class="text-lg font-medium text-gray-700 sm:text-2xl dark:text-gray-200">
+                                    <h2 class="text-lg font-medium sm:text-2xl text-gray-200">
                                         {{ x.title }}
                                     </h2>
 
@@ -97,7 +97,7 @@
                                 </div>
                             </div>
 
-                            <h2 class="text-2xl font-semibold text-gray-500 sm:text-4xl dark:text-gray-300">
+                            <h2 class="text-2xl font-semibold sm:text-4xl text-gray-300">
                                 {{ x.price }}$
                                 {% if x.name == 'beatmaking' %}
                                     <span class="text-base font-medium">/heure</span>

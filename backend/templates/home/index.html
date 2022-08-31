@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components/header.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components/carousel.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components/welcome.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}" type="text/css">
 {% endblock %}
 
 {% block loader %}
@@ -17,11 +16,9 @@
     {% include 'components/announcement.html' %}
     {% include 'components/welcome.html' %}
     {% include 'components/services.html' %}
-    {% include 'components/gallery.html' %}
-    {% include 'components/offers.html' %}
     {% include 'components/pricing.html' %}
+    {% include 'components/gallery.html' %}
     {% include 'components/production.html' %}
-    {% include 'components/send_message.html' %}
     {% include 'components/partners.html' %}
     {% include 'components/footer.html' %}
 {% endblock %}

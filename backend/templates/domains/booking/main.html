@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/header.css') }}" type="text/css">
     <style>
         .accordion {
           background-color: #eee;
@@ -39,6 +40,10 @@
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
     </style>
+{% endblock %}
+
+{% block content %}
+
 
     {% include 'components/navbar.html' %}
 

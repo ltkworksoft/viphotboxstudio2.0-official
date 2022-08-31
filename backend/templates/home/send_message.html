@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <div class="flex min-h-screen items-center justify-start bg-white p-5" id="send_message">
   <div class="mx-auto w-full max-w-lg">
     <h1 class="text-4xl font-medium">Nous contacter</h1>
@@ -6,15 +10,9 @@
         <a href="{{ front_pack['social_medias']['instagram']['link'] }}" target="_blank" class="underline text-pink-500">
             Instagram
         </a>
-         et on te répondra le plus vite possible! ou bien visite la page de
-        <a href="{{ url_for('home.contacts') }}" class="underline text-pink-500">
-            contacts
-        </a>
-        <!--
-        ou envoie un message en remplissant les champs ci-dessous -->
+         et on te répondra le plus vite possible! ou ou envoie un message en remplissant les champs ci-dessous
     </p>
 
-      <!--
       {% set form = front_pack["message_form"] %}
 
     <form action="/send_message" class="mt-10" method="post">
@@ -55,6 +53,29 @@
 
         {{ form.submit(class="mt-5 rounded-md bg-black px-10 py-2 text-white") }}
     </form>
-    -->
+
+          {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes mt-5">
+    {% for message in messages %}
+      <li class="text-green-600 text-xl">{{ message }} <a href="{{ url_for('home.index') }}" class="underline text-black">Retour à l'accueil</a> </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
   </div>
+
+
 </div>
+
+
+
+<script>
+    fetch('/send_message', {
+        headers : {
+
+        }
+    })
+</script>
+
+{% endblock %}

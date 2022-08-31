@@ -1,21 +1,84 @@
-<div class="w-full h-auto py-24 px-16 lg:flex items-center" id="gallery">
-    <div class="mr-16 lg:mb-0 mb-8"  id="pricing">
-        <h1 class="text-5xl uppercase font-bold">VIP PHOTOS</h1>
-    </div>
+<style>
 
-    <div class="overflow-x-auto flex items-center hover:scroll-auto" id="gallery">
-        {% for i in front_pack['settings'].generate_gallery_slides(0, 14, 'gallery', 'slide')['paths'] %}
-            <img src="{{ url_for('static', filename=i) }}" alt="slide" class="h-96 w-72 m-3 hover:-translate-y-6
-            hover:skew-y-2 ease-in duration-400 delay-300 shadow-md rounded">
-        {% endfor %}
-    </div>
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+    height: 500px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin: 10px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1 class="text-6xl font-bold">VIP Photos</h1>
 </div>
 
-<script>
-    const scrollContainer = document.getElementById("gallery");
-
-    scrollContainer.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
-        scrollContainer.scrollLeft += evt.deltaY;
-    });
-</script>
+<!-- Photo Grid -->
+<div class="row">
+  <div class="column">
+    <img src="{{ url_for('static', filename='img/gallery/slide1.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide5.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide9.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide13.jpg') }}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ url_for('static', filename='img/gallery/slide2.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide6.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide10.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide14.jpg') }}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ url_for('static', filename='img/gallery/slide3.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide7.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide11.jpg') }}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ url_for('static', filename='img/gallery/slide4.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide8.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='img/gallery/slide12.jpg') }}" style="width:100%">
+  </div>
+</div>

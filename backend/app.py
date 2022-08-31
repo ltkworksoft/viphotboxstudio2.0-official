@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
-from flask_scss import Scss
 from backend.settings import settings
 
 login_manager = LoginManager()
@@ -28,7 +27,6 @@ def create_app():
     login_manager.init_app(app)
     marsh.init_app(app)
     mig.init_app(app, db)
-    Scss(app, static_dir='source/static', asset_dir='source/assets')
 
     from backend.home import home
     from backend.api import api
