@@ -17,6 +17,6 @@ class MessagesControllers:
         )
         db.session.add(new_message)
         db.session.commit()
-        send_mail(email, "Ne pas répondre", "email/email_message", message=new_message)
+        # send_mail(email, "Ne pas répondre", "email/email_message", message=new_message)
         flash("Votre a été reçu! Merci d'avoir contacter VIP Hotbox Studio")
         return redirect(request.referrer)

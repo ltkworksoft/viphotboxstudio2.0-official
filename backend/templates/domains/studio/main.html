@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block loader %}
+    {% include 'components/loader.html' %}
+{% endblock %}
+
 {% block content %}
     {% include 'components/navbar.html' %}
 
@@ -49,13 +53,8 @@
                                 <a href="" class="focus:outline-none focus:underline flex items-center mt-4
                                 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                     <p class="pr-2 text-lg font-medium leading-none animate-pulse">
-                                        Regarder Nos Clips Vidéo
+
                                     </p>
-                                    <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -75,12 +74,7 @@
                                 <p class="text-base leading-4 text-white mt-2">On accompagne ton talent</p>
                                 <a href="" class="focus:outline-none focus:underline flex items-center mt-4
                                 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                                    <p class="pr-2 text-sm font-medium leading-none">En Savoir Plus</p>
-                                    <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
+
                                 </a>
                             </div>
                         </div>
@@ -99,12 +93,7 @@
                                     <p class="text-base leading-4 text-white mt-2">Fais-toi écouter!</p>
                                     <a href="" class="focus:outline-none focus:underline flex items-center mt-4
                                     cursor-pointer text-white hover:text-gray-200 hover:underline">
-                                        <p class="pr-2 text-sm font-medium leading-none">En Savoir Plus</p>
-                                        <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16"
-                                             fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor"
-                                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
+
                                     </a>
                                 </div>
                             </div>
@@ -119,7 +108,7 @@
                                         Beatmaking & Production Instrumentale
                                     </h2>
                                     <p class="text-base leading-4 text-white mt-2">WE THE BEST BEAT</p>
-                                    <a href="" target="_blank" class="focus:outline-none focus:underline flex
+                                    <a href="https://player.beatstars.com/?storeId=128327" target="_blank" class="focus:outline-none focus:underline flex
                                     items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                         <p class="pr-2 text-sm font-medium leading-none">Triple S Prods</p>
                                         <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16"

@@ -1,50 +1,15 @@
 {% extends 'base.html' %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/header.css') }}" type="text/css">
-    <style>
-        .accordion {
-          background-color: #eee;
-          color: #444;
-          cursor: pointer;
-          padding: 10px;
-          width: 100%;
-          text-align: left;
-          border: none;
-          outline: none;
-          transition: 0.4s;
-        }
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/navbar.css') }}" type="text/css">
+{% endblock %}
 
-        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-        .active, .accordion:hover {
-          background-color: #ccc;
-        }
-
-        .panel {
-          padding: 0 18px;
-          background-color: white;
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.2s ease-out;
-        }
-
-        .accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-    </style>
+{% block loader %}
+    {% include 'components/loader.html' %}
 {% endblock %}
 
 {% block content %}
-
-
     {% include 'components/navbar.html' %}
 
     <div class="p-10">
@@ -124,14 +89,14 @@
 
     {% include 'components/footer.html' %}
     <script>
-    var acc = document.getElementsByClassName("accordion");
-var i;
+    const acc = document.getElementsByClassName("accordion");
+let i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
+      const panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";

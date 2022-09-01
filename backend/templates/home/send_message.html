@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block loader %}
+    {% include 'components/loader.html' %}
+{% endblock %}
+
 {% block content %}
 
 <div class="flex min-h-screen items-center justify-start bg-white p-5" id="send_message">
@@ -51,7 +55,7 @@
             </div>
         </div>
 
-        {{ form.submit(class="mt-5 rounded-md bg-black px-10 py-2 text-white") }}
+        {{ form.submit(class="mt-5 rounded-md bg-black px-10 py-2 text-white cursor-pointer hover:opacity-70") }}
     </form>
 
           {% with messages = get_flashed_messages() %}
@@ -63,6 +67,10 @@
     </ul>
   {% endif %}
 {% endwith %}
+
+  <div class="my-10 bg-red-700 p-2 rounded hover:bg-red-600 cursor-pointer w-56">
+      <a href="{{ url_for('home.index') }}" class="text-center text-white">Retour à la page d'accueil</a>
+  </div>
   </div>
 
 

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block loader %}
+    {% include 'components/loader.html' %}
+{% endblock %}
+
 {% block content %}
     {% set production_team = front_pack['production_team'] %}
     <div class="w-full h-full my-0 mx-auto p-0 bg-white justify-center">
