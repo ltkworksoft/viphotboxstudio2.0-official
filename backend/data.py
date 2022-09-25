@@ -8,15 +8,10 @@ send_message_categories = [
 
 vip_phones = {
     'phone1': {
-        'name': '+1 (581) 703-5651',
-        'link': 'tel:+15817035651',
+        'name': '+1 (581) 443-7701',
+        'link': 'tel:+15814437701',
         'icon': 'fa-solid fa-phone-volume text-red-600'
     },
-    'phone2': {
-        'name': '+1 (581) 984-3025',
-        'link': 'tel:+15819843025',
-        'icon': 'fa-solid fa-phone-volume text-blue-600'
-    }
 }
 
 vip_emails = {
@@ -75,7 +70,7 @@ production_team = {
         'role': 'Ingénieur de Son, Producteur',
         'description': 'Réalisateur de Clip Vidéo',
         'instagram': 'https://www.instagram.com/thedarkpointz/',
-        'phone': vip_phones['phone2']['link'],
+        'phone': vip_phones['phone1']['link'],
         'email': 'thedarkpointez@gmail.com',
         'ltk_profile': '',
         'profile_img': 'about/thedarkpointez.jpg'
