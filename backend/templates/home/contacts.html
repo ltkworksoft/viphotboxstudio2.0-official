@@ -46,10 +46,16 @@
                 </a>
                 -->
                 <p class="font-sans text-sm md:text-lg my-2 md:my-4 px-8 py-2 rounded">
-                    Heures D'ouverture <br>{{ front_pack['open_hours'].first_day }} -
-                    {{ front_pack['open_hours'].last_day }} <br>{{ front_pack['open_hours'].open_hour }} -
-                    {{ front_pack['open_hours'].close_hour }}
+                    Heures D'ouverture <br>
+                    Lundi - Jeudi de 16h à minuit <br>
+                    Samedi - Dimanche de 11h à minuit
                 </p>
+
+                <p class="text-white italic ml-10">Sous réservation par appel ou en ligne</p>
+
+                <a class="bg-white text-black px-3 py-2 rounded ml-10 w-64" href="{{ url_for('domains.booking.main') }}">
+                    Réserver une session en ligne
+                </a>
             </div>
 
             <div class="flex flex-col lg:w-3/5 justify-center w-full lg:-mt-12">

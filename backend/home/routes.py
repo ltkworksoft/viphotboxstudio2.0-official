@@ -36,7 +36,6 @@ def send_message_post():
     message = form.message.data
     return MessagesControllers.send_message(name, email, category, message)
 
-
-@home.route('/doc')
-def doc():
-    return render_template('doc.html', front_pack=front_pack())
+@home.route('/gal')
+def gal():
+    return render_template('components/gallery.html', front_pack=front_pack())

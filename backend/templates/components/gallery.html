@@ -1,84 +1,253 @@
-<style>
+<div class="w-screen bg-black">
+    <h2 class="text-center text-5xl font-bold my-5 text-white">
+        Photos Studio
+    </h2>
 
-.header {
-  text-align: center;
-  padding: 32px;
-}
+    <!-- Slider 1 -->
+    <div class="slider" id="slider1">
 
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-    height: 500px;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    margin: 10px;
-}
+        <!-- Slides -->
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider1/slide1.jpg') }})"></div>
 
-/* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
+        <!-- The Arrows -->
+        <i class="left" class="arrows" style="z-index:2; position:absolute;">
+            <svg viewBox="0 0 100 100">
+                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+            </svg>
+        </i>
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
+        <i class="right" class="arrows" style="z-index:2; position:absolute;">
+            <svg viewBox="0 0 100 100">
+                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) ">
+                </path></svg>
+        </i>
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+        <!-- Title Bar -->
+        <span class="titleBar">
+            <h1>VIP Photos</h1>
+        </span>
+    </div>
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-</style>
-<body>
+    <br>
 
-<!-- Header -->
-<div class="header">
-  <h1 class="text-6xl font-bold">VIP Photos</h1>
+<div class="row2Wrap">
+
+    <div class="slider" id="slider2">
+
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide1.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide2.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide3.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide4.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide5.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide6.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide7.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide8.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide9.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider2/slide10.jpg') }})"></div>
+
+        <i class="left" class="arrows" style="z-index:2; position:absolute;">
+      <svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg>
+    </i>
+        <i class="right" class="arrows" style="z-index:2; position:absolute;">
+      <svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg>
+    </i>
+        <!-- Title Bar -->
+        <!--
+        <span class="titleBar">
+            <h1>I am like a leaf in the wind.</h1>
+            <p>Watch me soar!</p>
+        </span>
+        -->
+    </div>
+
+
+    <!-- <h3>Individual slide text</h3> -->
+
+    <!-- Slider 1 -->
+    <div class="slider" id="slider3">
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider3/slide1.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider3/slide2.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider3/slide3.jpg') }})"></div>
+        <div style="background-image:url({{ url_for('static', filename='img/gallery/slider3/slide4.jpg') }})"></div>
+        <!-- The Arrows -->
+        <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+        <i class="right" class="arrows" style="z-index:2; position:absolute;">
+      <svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+        <!-- Title Bar -->
+        <!--     <span class="titleBar">
+        <h1>I am like a leaf in the wind.</h1>
+        <p>Watch me soar!</p>
+    </span> -->
+    </div>
+
+</div>
 </div>
 
-<!-- Photo Grid -->
-<div class="row">
-  <div class="column">
-    <img src="{{ url_for('static', filename='img/gallery/slide1.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide5.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide9.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide13.jpg') }}" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="{{ url_for('static', filename='img/gallery/slide2.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide6.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide10.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide14.jpg') }}" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="{{ url_for('static', filename='img/gallery/slide3.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide7.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide11.jpg') }}" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="{{ url_for('static', filename='img/gallery/slide4.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide8.jpg') }}" style="width:100%">
-    <img src="{{ url_for('static', filename='img/gallery/slide12.jpg') }}" style="width:100%">
-  </div>
-</div>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+(function($) {
+  "use strict";
+  $.fn.sliderResponsive = function(settings) {
+
+    var set = $.extend(
+      {
+        slidePause: 5000,
+        fadeSpeed: 800,
+        autoPlay: "on",
+        showArrows: "off",
+        hideDots: "off",
+        hoverZoom: "on",
+        titleBarTop: "off"
+      },
+      settings
+    );
+
+    var $slider = $(this);
+    var size = $slider.find("> div").length; //number of slides
+    var position = 0; // current position of carousal
+    var sliderIntervalID; // used to clear autoplay
+
+    // Add a Dot for each slide
+    $slider.append("<ul></ul>");
+    $slider.find("> div").each(function(){
+      $slider.find("> ul").append('<li></li>');
+    });
+
+    // Put .show on the first Slide
+    $slider.find("div:first-of-type").addClass("show");
+
+    // Put .showLi on the first dot
+    $slider.find("li:first-of-type").addClass("showli")
+
+     //fadeout all items except .show
+    $slider.find("> div").not(".show").fadeOut();
+
+    // If Autoplay is set to 'on' than start it
+    if (set.autoPlay === "on") {
+        startSlider();
+    }
+
+    // If showarrows is set to 'on' then don't hide them
+    if (set.showArrows === "on") {
+        $slider.addClass('showArrows');
+    }
+
+    // If hideDots is set to 'on' then hide them
+    if (set.hideDots === "on") {
+        $slider.addClass('hideDots');
+    }
+
+    // If hoverZoom is set to 'off' then stop it
+    if (set.hoverZoom === "off") {
+        $slider.addClass('hoverZoomOff');
+    }
+
+    // If titleBarTop is set to 'on' then move it up
+    if (set.titleBarTop === "on") {
+        $slider.addClass('titleBarTop');
+    }
+
+    // function to start auto play
+    function startSlider() {
+      sliderIntervalID = setInterval(function() {
+        nextSlide();
+      }, set.slidePause);
+    }
+
+    // on mouseover stop the autoplay
+    $slider.mouseover(function() {
+      if (set.autoPlay === "on") {
+        clearInterval(sliderIntervalID);
+      }
+    });
+
+    // on mouseout starts the autoplay
+    $slider.mouseout(function() {
+      if (set.autoPlay === "on") {
+        startSlider();
+      }
+    });
+
+    //on right arrow click
+    $slider.find("> .right").click(nextSlide)
+
+    //on left arrow click
+    $slider.find("> .left").click(prevSlide);
+
+    // Go to next slide
+    function nextSlide() {
+      position = $slider.find(".show").index() + 1;
+      if (position > size - 1) position = 0;
+      changeCarousel(position);
+    }
+
+    // Go to previous slide
+    function prevSlide() {
+      position = $slider.find(".show").index() - 1;
+      if (position < 0) position = size - 1;
+      changeCarousel(position);
+    }
+
+    //when user clicks slider button
+    $slider.find(" > ul > li").click(function() {
+      position = $(this).index();
+      changeCarousel($(this).index());
+    });
+
+    //this changes the image and button selection
+    function changeCarousel() {
+      $slider.find(".show").removeClass("show").fadeOut();
+      $slider
+        .find("> div")
+        .eq(position)
+        .fadeIn(set.fadeSpeed)
+        .addClass("show");
+      // The Dots
+      $slider.find("> ul").find(".showli").removeClass("showli");
+      $slider.find("> ul > li").eq(position).addClass("showli");
+    }
+
+    return $slider;
+  };
+})(jQuery);
+
+
+
+//////////////////////////////////////////////
+// Activate each slider - change options
+//////////////////////////////////////////////
+$(document).ready(function() {
+
+  $("#slider1").sliderResponsive({
+  // Using default everything
+    // slidePause: 5000,
+    // fadeSpeed: 800,
+    // autoPlay: "on",
+    // showArrows: "off",
+    // hideDots: "off",
+    // hoverZoom: "on",
+    // titleBarTop: "off"
+  });
+
+  $("#slider2").sliderResponsive({
+    fadeSpeed: 300,
+    autoPlay: "on",
+    showArrows: "on",
+    hideDots: "on"
+  });
+
+  $("#slider3").sliderResponsive({
+    hoverZoom: "off",
+    hideDots: "on"
+  });
+
+});
+</script>
