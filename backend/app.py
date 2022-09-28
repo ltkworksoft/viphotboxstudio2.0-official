@@ -1,4 +1,5 @@
-from flask import Flask, session
+import os
+from flask import Flask, session, request, redirect
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
