@@ -44,11 +44,6 @@ def create_app():
                 code = 301
                 return redirect(url, code=code)
 
-    @app.before_request
-    def before_request():
-        session.permanent = True
-        app.permanent_session_lifetime = app.config['PERMANENT_SESSION_LIFETIME']
-
     app.register_blueprint(home)
     app.register_blueprint(api)
     app.register_blueprint(domains)
