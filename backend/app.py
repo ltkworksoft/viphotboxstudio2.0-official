@@ -38,6 +38,14 @@ def create_app():
 
     @app.before_request
     def before_request():
+        if 'DYNO' in os.environ:
+            if request.url.startswith('http://'):
+                url = request.url.replace('http://', 'https://', 1)
+                code = 301
+                return redirect(url, code=code)
+
+    @app.before_request
+    def before_request():
         session.permanent = True
         app.permanent_session_lifetime = app.config['PERMANENT_SESSION_LIFETIME']
 
